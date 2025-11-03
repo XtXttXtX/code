@@ -1,0 +1,31 @@
+﻿  Queue.c
+  test.c
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.h(39,41): error C2146: 语法错误: 缺少“)”(在标识符“k”的前面)
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.h(39,41): error C2061: 语法错误: 标识符“k”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.h(39,41): error C2059: 语法错误:“;”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.h(39,42): error C2059: 语法错误:“)”
+  tree.c
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.h(39,41): error C2146: 语法错误: 缺少“)”(在标识符“k”的前面)
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.h(39,41): error C2061: 语法错误: 标识符“k”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.h(39,41): error C2059: 语法错误:“;”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.h(39,42): error C2059: 语法错误:“)”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(16,19): warning C4047: “=”:“BTDataType *”与“BTDataType”的间接级别不同
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(28,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“BTDataType *”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(41,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“BTDataType *”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(54,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“BTDataType *”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(64,21): warning C4047: “函数”:“QDataType”与“BTNode *”的间接级别不同
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(64,17): warning C4024: “QueuePush”: 形参和实参 2 的类型不同
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(73,28): warning C4047: “函数”:“QDataType”与“BinaryTreeNode *”的间接级别不同
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(73,22): warning C4024: “QueuePush”: 形参和实参 2 的类型不同
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(77,30): warning C4047: “函数”:“QDataType”与“BinaryTreeNode *”的间接级别不同
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(77,23): warning C4024: “QueuePush”: 形参和实参 2 的类型不同
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(69,1): warning C4047: “初始化”:“BTNode *”与“QDataType”的间接级别不同
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(98,14): warning C4047: “return”:“int”与“void *”的间接级别不同
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(102,14): warning C4047: “return”:“int”与“void *”的间接级别不同
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(108,41): error C2146: 语法错误: 缺少“)”(在标识符“k”的前面)
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(108,41): error C2061: 语法错误: 标识符“k”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(108,41): error C2059: 语法错误:“;”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(108,42): error C2059: 语法错误:“)”
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(109,1): error C2449: 在文件范围内找到“{”(是否缺少函数头?)
+D:\program\code\SJJG\BinaryTreeNode\BinaryTreeNode\tree.c(111,1): error C2059: 语法错误:“}”
+  正在生成代码...

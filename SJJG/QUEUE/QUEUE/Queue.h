@@ -4,7 +4,7 @@
 #include<assert.h>
 #include<stdbool.h>
 
-typedef int QDataType;//队列中存储的元素类型(这里用整形举例)
+typedef struct BinaryTreeNode* QDataType;//队列中存储的元素类型(这里用整形举例)
 
 //链式结构：表示队列
 typedef struct QListNode
