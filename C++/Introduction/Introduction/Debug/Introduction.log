@@ -1,2 +1,3 @@
 ﻿  test.cpp
-D:\program\code\C++\Introduction\Introduction\test.cpp(57,15): error C2065: “b”: 未声明的标识符
+D:\program\code\C++\Introduction\Introduction\test.cpp(300,11): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+  Introduction.vcxproj -> D:\program\code\C++\Introduction\Debug\Introduction.exe
