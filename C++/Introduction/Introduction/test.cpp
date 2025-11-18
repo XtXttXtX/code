@@ -313,22 +313,105 @@ using namespace std;
 //	return 0;
 //}
 
+//
+////缺省函数的重载
+//#include<iostream>
+//using namespace std;
+//void Fun(int x,double y = 1.5)
+//{
+//	cout << "void Fun(int x,double y = 1.5)" << endl;
+//
+//}
+//void Fun(int x)
+//{
+//	cout << "void Fun(int x)" << endl;
+//
+//}
+//int main()
+//{
+//	Fun(1,1.9);////这里会调用第一个函数没问题
+//	Fun(1);//此时既可以调用第一个函数，也可以调用第二个函数，存在歧义，会报错
+//}
 
-//缺省函数的重载
-#include<iostream>
-using namespace std;
-void Fun(int x,double y = 1.5)
-{
-	cout << "void Fun(int x,double y = 1.5)" << endl;
+////引用的使用
+//void Test()
+//{
+//	int a = 10;
+//	int& ra = a;//<====定义引用类型，此时ra就是变量a的别名，ra和a是同一块内存空间
+//	printf("a的地址为%p\n", &a);
+//	printf("ra的地址为%p\n", &ra);
+//
+//}
+//
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
 
-}
-void Fun(int x)
-{
-	cout << "void Fun(int x)" << endl;
+//int main()
+//{
+//	int a = 10;
+//	int& b;//错误写法
+//	int& b = a;//正确写法
+//	return 0;
+//}
 
-}
+//int main()
+//{
+//	int a = 10;
+//	//下面的b,c,d均是变量a的别名
+//	int& b = a;
+//	int& c = a;
+//	int& d = c;
+//	printf("%p %p %p %p\n", &a, &b, &c, &d);
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int a = 10;
+//	int& b = a;//b是a的别名
+//	int c = 20;
+//
+//	//能不能将b改成c的别名呢？
+//	b = c;//不行，这条语句是将c的值赋给引用变量b，即修改变量a的值，并不是让b引用c
+//
+//	printf("&a = %p &b = %p &c = %p\n", &a, &b, &c);
+//	printf("a = %d b = %d c = %d\n", a, b, c);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 10;
+//  double& b = a;//这种写法会报错
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int a = 10;
+//	const double& b = a;
+//
+//	//类似于下面的步骤
+//	int a = 10;
+//	double tmp = a;//将a的值转换赋给tmp
+//	const double& b = tmp;//b再引用tmp
+//	return 0;
+//}
+
 int main()
 {
-	Fun(1,1.9);////这里会调用第一个函数没问题
-	Fun(1);//此时既可以调用第一个函数，也可以调用第二个函数，存在歧义，会报错
+	int a = 10;
+	const double& b = a;
+
+	printf("&a = %p , &b = %p\n", &a, &b);//求a,b空间的地址
+
+	printf("修改前 a = %d , b = %.2lf\n", a, b);
+	a = 20;
+	//b = 30; //这句代码会报错，被const修饰的变量不可修改
+	printf("修改后 a = %d , b = %.2lf\n", a, b);
+	return 0;
 }
