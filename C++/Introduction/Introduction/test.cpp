@@ -402,16 +402,121 @@ using namespace std;
 //	return 0;
 //}
 
+//int main()
+//{
+//	int a = 10;
+//	const double& b = a;
+//
+//	printf("&a = %p , &b = %p\n", &a, &b);//求a,b空间的地址
+//
+//	printf("修改前 a = %d , b = %.2lf\n", a, b);
+//	a = 20;
+//	//b = 30; //这句代码会报错，被const修饰的变量不可修改
+//	printf("修改后 a = %d , b = %.2lf\n", a, b);
+//	return 0;
+//}
+
+
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int a = 10;
+//	const int& b = a;
+//	//b++;//会报错，b是常引用，无法修改
+//	a++;//a是普通变量，允许修改
+//	cout << "a = " << a << ' ' << "b = " << b;
+//	return 0;
+//}
+
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int a = 10;
+//	const int& b = a;//权限的缩小，const引用普通变量，编译正常
+//
+//	const int aa = 10;
+//	const int& bb = aa;//权限的平移，const引用const变量，编译正常
+//
+//	int& cc = aa;//权限的放大，普通引用const变量，报错
+//	return 0;
+//}
+
+//#include<iostream>
+//using namespace std;
+////引用作为函数参数
+//void Swap(int& x, int& y)
+//{
+//	int tmp = x;
+//	x = y;
+//	y = tmp;
+//
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	cout << "交换前：" << "a = " << a << "b = " << b << endl;
+//	Swap(a, b);
+//	cout << "交换后：" << "a = " << a << "b = " << b << endl;
+//}
+
+//#include<iostream>
+//using namespace std;
+//
+//int& Count()
+//{
+//	static int n = 0;//n是一个静态变量，函数调用结束后不会销毁
+//	cout << n << endl;
+//	return n;
+//}
+//int main()
+//{
+//	int& k = Count();
+//
+//	k++;
+//
+//	Count();
+//
+//	return 0;
+//
+//}
+
+
+//int& Add(int a, int b)
+//{
+//	int c = a + b; //c是局部变量，Add调用结束后被销毁
+//	return c;
+//}
+//int main()
+//{
+//	int& ret = Add(1, 2);
+//	Add(3, 4);
+//	cout << "Add(1, 2) is :" << ret << endl;
+//	return 0;
+//}
+
+#include <iostream>
+using namespace std;
+
+int& Add(int a, int b)
+{
+    int c = a + b;
+    cout << "在Add函数内: c = " << c << ", &c = " << &c << endl;
+    return c;
+}
+
 int main()
 {
-	int a = 10;
-	const double& b = a;
+    int& ret = Add(1, 2);
+    cout << "第一次调用后: ret = " << ret << ", &ret = " << &ret << endl;
 
-	printf("&a = %p , &b = %p\n", &a, &b);//求a,b空间的地址
+    Add(3, 4);
+    cout << "第二次调用后: ret = " << ret << ", &ret = " << &ret << endl;
 
-	printf("修改前 a = %d , b = %.2lf\n", a, b);
-	a = 20;
-	//b = 30; //这句代码会报错，被const修饰的变量不可修改
-	printf("修改后 a = %d , b = %.2lf\n", a, b);
-	return 0;
+    // 可能得到7，也可能是垃圾值
+    cout << "最终结果: " << ret << endl;
+
+    return 0;
 }
