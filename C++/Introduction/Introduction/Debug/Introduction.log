@@ -1,3 +1,2 @@
 ﻿  test.cpp
-D:\program\code\C++\Introduction\Introduction\test.cpp(507): warning C4172: 返回局部变量或临时变量的地址: c
   Introduction.vcxproj -> D:\program\code\C++\Introduction\Debug\Introduction.exe

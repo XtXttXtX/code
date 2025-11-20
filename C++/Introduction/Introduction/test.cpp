@@ -497,26 +497,143 @@ using namespace std;
 //	return 0;
 //}
 
-#include <iostream>
-using namespace std;
+//#include <iostream>
+//using namespace std;
+//
+//int& Add(int a, int b)
+//{
+//    int c = a + b;
+//    cout << "在Add函数内: c = " << c << ", &c = " << &c << endl;
+//    return c;
+//}
+//
+//int main()
+//{
+//    int& ret = Add(1, 2);
+//    cout << "第一次调用后: ret = " << ret << ", &ret = " << &ret << endl;
+//
+//    Add(3, 4);
+//    cout << "第二次调用后: ret = " << ret << ", &ret = " << &ret << endl;
+//
+//    // 可能得到7，也可能是垃圾值
+//    cout << "最终结果: " << ret << endl;
+//
+//    return 0;
+//}
 
-int& Add(int a, int b)
+//#include <iostream>
+//#include <time.h>
+//
+//struct A { int a[10000]; };
+//
+//void TestFunc1(A a)
+//{
+//	;
+//}
+//
+//void TestFunc2(A& a)
+//{
+//	;
+//}
+//
+//void TestRefAndValue()
+//{
+//	A a;
+//	// 以值作为函数参数
+//	size_t begin1 = clock(); //clock()函数返回程序运行到调用clock()函数所耗费的时间，单位是ms
+//	for (size_t i = 0; i < 100000; ++i)
+//		TestFunc1(a);
+//	size_t end1 = clock();
+//
+//	// 以引用作为函数参数
+//	size_t begin2 = clock();
+//	for (size_t i = 0; i < 100000; ++i)
+//		TestFunc2(a);
+//	size_t end2 = clock();
+//
+//	// 分别计算两个函数运行结束后的时间
+//	cout << "TestFunc1(A)-time:" << end1 - begin1 << endl;
+//	cout << "TestFunc2(A&)-time:" << end2 - begin2 << endl;
+//}
+//int main()
+//{
+//	TestRefAndValue();
+//	return 0;
+//}
+
+
+//#include <time.h>
+//struct A
+//{
+//	int a[10000];
+//}a;
+//// 值返回
+//A TestFunc1()
+//{
+//	return a;
+//}
+//// 引用返回
+//A& TestFunc2()
+//{
+//	return a;
+//}
+//void TestRefAndValue()
+//{
+//	// 以值作为函数的返回值类型
+//	size_t begin1 = clock();
+//	for (size_t i = 0; i < 100000; ++i)
+//		TestFunc1();
+//	size_t end1 = clock();
+//
+//	// 以引用作为函数的返回值类型
+//	size_t begin2 = clock();
+//	for (size_t i = 0; i < 100000; ++i)
+//		TestFunc2();
+//	size_t end2 = clock();
+//
+//	// 计算两个函数运算完成之后的时间
+//	cout << "TestFunc1 time:" << end1 - begin1 << endl;
+//	cout << "TestFunc2 time:" << end2 - begin2 << endl;
+//}
+//int main()
+//{
+//	TestRefAndValue();
+//	return 0;
+//}
+
+//
+//int main()
+//{
+//	
+//	int a = 10;
+//	//引用
+//	int& ra = a;
+//	ra = 20;
+//	//指针
+//	int* pa = &a;
+//	*pa = 20;
+//	return 0;
+//}
+
+int Add(int x, int y)
 {
-    int c = a + b;
-    cout << "在Add函数内: c = " << c << ", &c = " << &c << endl;
-    return c;
+	return x + y;
 }
 
 int main()
 {
-    int& ret = Add(1, 2);
-    cout << "第一次调用后: ret = " << ret << ", &ret = " << &ret << endl;
-
-    Add(3, 4);
-    cout << "第二次调用后: ret = " << ret << ", &ret = " << &ret << endl;
-
-    // 可能得到7，也可能是垃圾值
-    cout << "最终结果: " << ret << endl;
-
-    return 0;
+	int ans = 0;
+	ans = Add(1, 2);
+	return 0;
 }
+
+//inline int Add(int x, int y)
+//{
+//	return x + y;
+//}
+//int main()
+//{
+//	int ans = 0;
+//	ans = Add(1, 2);
+//	return 0;
+//}
