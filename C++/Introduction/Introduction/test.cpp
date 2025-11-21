@@ -614,18 +614,18 @@ using namespace std;
 //	*pa = 20;
 //	return 0;
 //}
-
-int Add(int x, int y)
-{
-	return x + y;
-}
-
-int main()
-{
-	int ans = 0;
-	ans = Add(1, 2);
-	return 0;
-}
+//
+//int Add(int x, int y)
+//{
+//	return x + y;
+//}
+//
+//int main()
+//{
+//	int ans = 0;
+//	ans = Add(1, 2);
+//	return 0;
+//}
 
 //inline int Add(int x, int y)
 //{
@@ -637,3 +637,230 @@ int main()
 //	ans = Add(1, 2);
 //	return 0;
 //}
+
+//#include <string>
+//#include <map>
+//int main()
+//{
+//	std::map<std::string, std::string> m{ { "apple", "苹果" }, { "orange","橙子" },{ "pear","梨" } };
+//	std::map<std::string, std::string>::iterator it = m.begin();
+//	while (it != m.end())
+//	{
+//		//....
+//	}
+//	return 0;
+//}
+
+
+//#include<string>
+//int TestAuto()
+//{
+//	return 10;
+//}
+//int main()
+//{
+//	int a = 10;
+//	string s;
+//	auto b = a;
+//	auto c = 'a';
+//	auto d = TestAuto();
+//	auto e = s.begin();
+//	cout << typeid(b).name() << endl; //typeid类似于sizeof一样，是一个操作符，其可以用来获取变量的类型。
+//	cout << typeid(c).name() << endl;
+//	cout << typeid(d).name() << endl;
+//	cout << typeid(e).name() << endl;
+//	//auto e; //无法通过编译，使用auto定义变量时必须对其进行初始化
+//	return 0;
+//}
+
+//int main()
+//{
+//	int val = 10;
+//	auto a; //错误写法，编译时会报错
+//	auto b = val; //正确写法，定义时进行初始化，编译器才能进行推导然后将auto替换
+//	return 0;
+//}
+
+//int main()
+//{
+//	int x = 10;
+//	auto a = &x;
+//	auto* b = &x;
+//	auto& c = x;
+//	cout << typeid(a).name() << endl;
+//	cout << typeid(b).name() << endl;
+//	cout << typeid(c).name() << endl;
+//	*a = 20;
+//	*b = 30;
+//	c = 40;
+//	return 0;
+//}
+
+//int main()
+//{
+//	auto a = 1, b = 2; // 正确写法
+//	auto c = 3, d = 4.0; // 编译失败，因为c和d的初始化表达式类型不同
+//
+//	return 0;
+//}
+
+//// 此处代码编译失败，auto不能作为形参类型，
+//// 原因：函数调用传参发生在运行阶段，故在编译阶段编译器无法对a的实际类型进行推导
+//void TestAuto(auto a)
+//{}
+//
+//int main()
+//{
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a[] = { 1,2,3 };
+//	auto b[] = { 4,5,6 };
+//	return 0;
+//}
+
+//int main()
+//{
+//	int array[] = { 1, 2, 3, 4, 5 };
+//	for (int i = 0; i < sizeof(array) / sizeof(array[0]); ++i)
+//	{
+//		array[i] *= 2; //利用下标访问
+//	}
+//	cout << endl;
+//	for (int* p = array; p < array + sizeof(array) / sizeof(array[0]); ++p)
+//	{
+//		cout << *p << ' '; //利用指针访问
+//	}
+//	cout << endl;
+//
+//}
+
+//int main()
+//{
+//	int array[] = { 1,2,3,4,5 };
+//
+//	//依次取数组的数据给引用变量e，自动判断结束，自动迭代 + 1
+//	for (auto& e : array)
+//	{
+//		e *= 2;
+//	}
+//
+//	//依次取数组的数据赋值给变量e，自动判断结束，自动迭代 + 1
+//	for (auto e : array)
+//	{
+//		cout << e << " ";
+//	}
+//	return 0;
+//}
+
+#include<iostream>
+#include <vector>  // 添加vector头文件
+using namespace std;  // 使用std命名空间
+//
+//int main()
+//{
+//	vector<int> v;
+//	for (int i = 1; i <= 5; i++) //插入1-5的数据
+//	{
+//		v.push_back(i);
+//	}
+//
+//	for (auto e : v) //范围for遍历
+//	{
+//		cout << e << ' ';
+//	}
+//	cout << endl;
+//	return 0;
+//}
+
+//int main()
+//{
+//	vector<int> v;
+//	for (int i = 1; i <= 5; i++) //插入1-5的数据
+//	{
+//		v.push_back(i);
+//	}
+//
+//	vector<int>::iterator it = v.begin();
+//	//auto it = v.begin(); //迭代器的类型较长，也可以使用auto自动推导
+//
+//	while (it != v.end()) //迭代器遍历，这里将it当做指针理解即可
+//	{
+//		cout << *it << ' ';
+//		it++;
+//	}
+//	cout << endl;
+//	return 0;
+//}
+
+//void putArray(int array[])
+//{
+//	//数组传参发生降维，array是个指针，指向数组首元素
+//	for (auto e : array) //由于array只是个int*指针，我们无法确定迭代的范围，故这里的范围for会报错
+//	{
+//		cout << e << ' ';
+//	}
+//}
+//int main()
+//{
+//
+//	vector<int> v;
+//	for (int i = 1; i <= 5; i++) //插入1-5的数据
+//	{
+//		v.push_back(i);
+//	}
+//
+//	for (auto e : v) //范围for遍历vector容器类。范围：v.begin()~v.end()
+//	{
+//		cout << e << ' ';
+//	}
+//	cout << endl;
+//
+//	int array[5] = { 1,2,3,4,5 };
+//	for (auto e : array) //范围for遍历array数组。范围：从第一个元素的下标0到最后一个元素的下标4
+//	{
+//		cout << e << ' ';
+//	}
+//
+//	putArray(array);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int* p1 = NULL;
+//	return 0;
+//}
+
+//void f(int)
+//{
+//	cout << "f(int)" << endl;
+//}
+//void f(int*)
+//{
+//	cout << "f(int*)" << endl;
+//}
+//int main()
+//{
+//	f(0);
+//	f(NULL);
+//	f((int*)NULL);
+//	return 0;
+//}
+
+void f(int)
+{
+	cout << "f(int)" << endl;
+}
+void f(int*)
+{
+	cout << "f(int*)" << endl;
+}
+int main()
+{
+	f(0);
+	f(nullptr); //nullptr表示空指针
+	return 0;
+}
