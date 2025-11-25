@@ -353,19 +353,540 @@ using namespace std;
 //	return 0;
 //}
 
-class A
+//class A
+//{
+//public:
+//	void PrintA()
+//	{
+//		cout << _a << endl;
+//	}
+//private:
+//	int _a;
+//};
+//int main()
+//{
+//	A* p = nullptr;
+//	p->PrintA();
+//	return 0;
+//}
+
+////空类
+//class Date
+//{
+//
+//};
+
+//class Date
+//{
+//public:
+//	void Init(int year, int month, int day)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	void Print()
+//	{
+//		cout << _year << "-" << _month << "-" << _day << endl;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//
+//int main()
+//{
+//	Date d1;
+//	d1.Init(2022, 7, 5);
+//	d1.Print();
+//	Date d2;
+//	d2.Init(2022, 7, 6);
+//	d2.Print();
+//	return 0;
+//}
+
+//class Date
+//{
+//public:
+//	//Date 的构造函数
+//	Date()
+//	{
+//		//进行初始化
+//		//...
+//	}
+//};
+
+
+//class Date
+//{
+//public:
+//	//Date的构造函数
+//	Date()
+//	{
+//
+//	}
+//	void Date() {} //错误写法，没有返回值
+//};
+
+
+//class Date
+//{
+//public:
+//	// 1.无参构造函数
+//	Date()
+//	{}
+//	// 2.带参构造函数
+//	Date(int year, int month, int day)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//
+//int main()
+//{
+//	//1.创建对象
+//	//2.调用相应的构造函数
+//	Date d1; //调用无参构造函数
+//	Date d2(2023, 8, 22); //调用带参构造函数
+//}
+
+//Date d1; //调用无参构造函数
+//
+//Date d3(); //声明一个没有形参的函数d3，它的返回值类型为Date
+
+//class Date
+//{
+//public:
+//
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//
+//int main()
+//{
+//	Date d1; //调用编译器自动生成的默认构造函数，默认构造是无参的，相匹配
+//
+//	Date d2(2023, 8, 22); //该行代码会报错，没有匹配的带参构造函数
+//}
+
+//class Date
+//{
+//public:
+//	//显式定义带参的构造函数
+//	Date(int year, int month, int day)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//
+//int main()
+//{
+//	Date d1;  //该行代码会报错，没有匹配的默认构造函数
+//
+//	Date d2(2023, 8, 22); //调用带参的构造函数
+//}
+
+//class Time
+//{
+//public:
+//	//Time类的默认构造函数
+//	Time()
+//	{
+//		_hours = 0;
+//		_minute = 0;
+//		_second = 0;
+//	}
+//private:
+//	int _hours;
+//	int _minute;
+//	int _second;
+//};
+//
+//class Date
+//{
+//public:
+//
+//private:
+//	//内置类型
+//	int _year;
+//	int _month;
+//	//自定义类型
+//	Time _day;
+//};
+//
+//int main()
+//{
+//	//调用编译器自动生成的默认构造函数
+//	Date d;
+//	return 0;
+//}
+
+//class Date
+//{
+//public:
+//	void Print()
+//	{
+//		cout << _year << '-' << _month << '-' << _day << endl;
+//	}
+//private:
+//	int _year = 0; //声明时给默认值
+//	int _month = 0;
+//	int _day = 0;
+//};
+//
+//int main()
+//{
+//	Date d;
+//	d.Print();
+//	return 0;
+//}
+
+//class Date
+//{
+//public:
+//	Date() //无参的构造函数
+//	{
+//		_year = 2023;
+//		_month = 8;
+//		_day = 22;
+//	}
+//	Date(int year = 2023, int month = 8, int day = 22) //全缺省的构造函数
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//
+//int main()
+//{
+//	Date d1(2024); //编译通过，调用全缺省的构造函数
+//	Date d2; //这里编译会报错，d2调用默认构造函数，但存在两个默认构造函数，编译器不知道调用哪个
+//	return 0;
+//}
+
+//class Stack
+//{
+//public:
+//	//构造函数，初始化一个栈，写成全缺省的形式
+//	Stack(size_t capacity = 4)
+//	{
+//		_array = (int*)malloc(sizeof(int) * capacity);
+//		if (nullptr == _array)
+//		{
+//			perror("malloc申请空间失败");
+//			return;
+//		}
+//		_capacity = capacity;
+//		_top = 0;
+//	}
+//
+//	//析构函数，在类名前加~号
+//	~Stack()
+//	{
+//		free(_array);//堆上动态申请的空间需要由用户自行释放
+//		//下面的代码也可以不写，栈上的空间操作系统会自动释放
+//		_array = nullptr;
+//		_capacity = _top = 0;
+//	}
+//private:
+//	int* _array;
+//	int _capacity;
+//	int _top;
+//};
+
+
+//class Stack
+//{
+//public:
+//	Stack() {
+//		cout << "Stack()" << endl;
+//	}
+//	~Stack() {
+//		cout << "~Stack()" << endl;
+//	}
+//private:
+//	int* _array;
+//	int _capacity;
+//	int _top;
+//};
+//
+//int main()
+//{
+//	Stack s;
+//	return 0;
+//}
+
+//class Time
+//{
+//public:
+//	Time() //Time类的默认构造函数
+//	{
+//		cout << "Time()" << endl;
+//	}
+//	~Time() //Time类的析构函数
+//	{
+//		cout << "~Time()" << endl;
+//	}
+//private:
+//	int _hours;
+//	int _minute;
+//	int _second;
+//};
+//class Date
+//{
+//public:
+//	//没有显式写出构造函数和析构函数，使用编译器自动生成的
+//
+//private:
+//	int _year;
+//	int _month;
+//	Time _day;
+//};
+//
+//int main()
+//{
+//	Date d; //调用编译器自动生成的默认构造函数
+//	return 0;
+//}
+
+
+//class Date
+//{
+//public:
+//	//构造函数
+//	Date(int year = 0, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	//拷贝构造函数
+//	Date(const Date& d)
+//	{
+//		_year = d._year;
+//		_month = d._month;
+//		_day = d._day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d1(2025, 11, 24);
+//	Date d2(d1);//用已存在的对象d1创建对象d2
+//
+//	return 0;
+//}
+
+////拷贝构造函数的写法
+//Date(const Date d) // 错误写法：编译报错，会引发无穷递归
+//{
+//	_year = d._year;
+//	_month = d._month;
+//	_day = d._day;
+//}
+//
+//Date(const Date& d) // 正确写法
+//{
+//	_year = d._year;
+//	_month = d._month;
+//	_day = d._day;
+//}
+
+
+//class Time
+//{
+//public:
+//	Time()
+//	{
+//		_hour = 1;
+//		_minute = 1;
+//		_second = 1;
+//	}
+//	Time(const Time& t)
+//	{
+//		_hour = t._hour;
+//		_minute = t._minute;
+//		_second = t._second;
+//		cout << "Time::Time(const Time&)" << endl;
+//	}
+//private:
+//	int _hour;
+//	int _minute;
+//	int _second;
+//};
+//class Date
+//{
+//private:
+//	// 内置类型
+//	int _year = 2023;
+//	int _month = 1;
+//	int _day = 1;
+//	// 自定义类型
+//	Time _t;
+//};
+//int main()
+//{
+//	Date d1; //d1调用默认的构造函数进行初始化
+//
+//	// 用已经存在的d1拷贝构造d2，此时会调用Date类的拷贝构造函数
+//	// 但Date类并没有显式定义拷贝构造函数，因此编译器会给Date类生成一个默认的拷贝构造函数
+//	Date d2(d1);
+//	return 0;
+//}
+
+
+//class Stack
+//{
+//public:
+//	Stack(size_t capacity = 16)
+//	{
+//		_array = (int*)malloc(capacity * sizeof(int));
+//		if (nullptr == _array)
+//		{
+//			perror("malloc申请空间失败");
+//			return;
+//		}
+//		_size = 0;
+//		_capacity = capacity;
+//	}
+//	~Stack()
+//	{
+//		if (_array)
+//		{
+//			free(_array);
+//			_array = nullptr;
+//			_capacity = 0;
+//			_size = 0;
+//		}
+//	}
+//private:
+//	int* _array;
+//	size_t _size;
+//	size_t _capacity;
+//};
+//int main()
+//{
+//	Stack s1;
+//	Stack s2(s1);
+//	return 0;
+//}
+
+//class Date
+//{
+//public:
+//	Date(int year, int minute, int day)
+//	{
+//		cout << "Date(int,int,int):" << this << endl;
+//	}
+//	Date(const Date& d)
+//	{
+//		cout << "Date(const Date& d):" << this << endl;
+//	}
+//	~Date()
+//	{
+//		cout << "~Date():" << this << endl;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//Date Test(Date d)
+//{
+//	Date temp(d);
+//	return temp;
+//}
+//int main()
+//{
+//	Date d1(2022, 1, 13);
+//	Test(d1);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	a = a + 10;
+//	b = b - 10;
+//	cout << (a == b);
+//	cout << (a > b);
+//	//还可以使用许许多多的运算符进行操作，这里就不一一挪列了
+//	//...
+//	return 0;
+//}
+
+//class Date
+//{
+//public:
+//	Date(int year = 2000, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d1(2023, 8, 24);
+//	Date d2(2023, 8, 25);
+//	d1 = d1 + 10; //d1类对象使用+号运算符
+//	d1 == d2; //d2类对象使用==号运算符
+//}
+
+class Date
 {
 public:
-	void PrintA()
+	Date(int year = 2000, int month = 1, int day = 1)
 	{
-		cout << _a << endl;
+		_year = year;
+		_month = month;
+		_day = day;
+	}
+	void AddYear(int val)
+	{
+		_year += val;
+	}
+	bool isSame(const Date& d)
+	{
+		return _year == d._year && _month == d._month && _day == d._day;
 	}
 private:
-	int _a;
+	int _year;
+	int _month;
+	int _day;
 };
 int main()
 {
-	A* p = nullptr;
-	p->PrintA();
-	return 0;
+	Date d1(2025, 11, 24);
+	Date d2(2026, 8, 24);
+	d1.AddYear(1); //年份+1
+	cout << d1.isSame(d2); //比较d1和d2是否相等
 }
